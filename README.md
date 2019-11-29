@@ -38,7 +38,7 @@ start the server: `docker-compose up`
 
 browse to localhost:3001
 
-####Useful commands:
+## Useful commands:
 <dl>
 <dt>docker-compose stop</dt>
 <dd>Stop the running containers</dd>
