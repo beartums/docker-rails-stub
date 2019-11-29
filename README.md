@@ -8,10 +8,7 @@ This repository is optimized for working on a Windows OS. Adapted from docker.co
 Make sure that you have `docker` and `docker-compose` installed on your machine.
 
 ### 
-clone into directory name of your choice. change to that directory.  Now run
-```
-docker-compose build
-```
+clone into directory name of your choice. change to that directory. 
 
 Create your application with:
 ```
