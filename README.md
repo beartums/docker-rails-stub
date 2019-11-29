@@ -1,6 +1,18 @@
-clone into directory name of your choice
-#edit docker-compose.yml to set your app name
-create app: docker-compose run web rails new . --force --no-deps --database=postgresql
+docker-rails-stub
+===
+Very simple set of files to help bootstrap a rails app in docker using postgres so that the docker evironment doesn't need to be installed on you machine -- eliminating conflicting version management and other nasties.
+
+This repository is optimized for working on a Windows OS. Adapted from docker.com instructions [here](https://docs.docker.com/compose/rails/)
+
+## Getting started
+Make sure that you have `docker` and `docker-compose` installed on your machine.
+
+### 
+clone into directory name of your choice.  Now run
+```docker-compose build```
+
+Create your application with:
+```docker-compose run web rails new . --force --no-deps --database=postgresql```
 replace rails-sass with sassc in gemfile
 docker-compose build
 update config/database.yml with db.yml.example
@@ -39,7 +51,7 @@ create home/index.erb:
 Use styles
 ???add to gemfile: gem 'bootstrap'
 yarn add bootstrap
-yarn add popper
+yarn add popper.js
 yarn add jquery
 
 docker-compose build
