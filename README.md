@@ -8,7 +8,10 @@ This repository is optimized for working on a Windows OS. Adapted from docker.co
 Make sure that you have `docker` and `docker-compose` installed on your machine.
 
 ### 
-clone into directory name of your choice. change to that directory. 
+clone into directory name of your choice. Change to that directory and build:
+```
+docker-compose build
+```
 
 Create your application with:
 ```
@@ -16,7 +19,7 @@ docker-compose run web rails new . --force --no-deps --database=postgresql
 ```
 This should populate your folder with all the files needed to run a rails app.  We're almost there!
 
-Edit your gemfile and replace `rails-sass` with `sassc`
+Edit your gemfile and replace `gem 'sass-rails', '~> 5.0'` with `gem 'sassc'`
 
 run 
 ```
