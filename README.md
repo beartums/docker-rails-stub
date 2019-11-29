@@ -9,18 +9,36 @@ Make sure that you have `docker` and `docker-compose` installed on your machine.
 
 ### 
 clone into directory name of your choice.  Now run
-```docker-compose build```
+```
+docker-compose build
+```
 
 Create your application with:
-```docker-compose run web rails new . --force --no-deps --database=postgresql```
-replace rails-sass with sassc in gemfile
+```
+docker-compose run web rails new . --force --no-deps --database=postgresql
+```
+This should populate your folder with all the files needed to run a rails app.  We're almost there!
+
+Edit your gemfile and replace `rails-sass` with `sassc`
+
+run 
+```
 docker-compose build
-update config/database.yml with db.yml.example
-docker-compose up
+```
+
+Now you need to edit the `config/database.yml` file to be able to connect to the 
+database. Copy the uncommented lines from `/db.yml.example`
+
+create the database for rails with
+```
 docker-compose run web rake db:create
+```
+
+start the server: `docker-compose up`
+
 browse to localhost:3001
 
-useful commands:
+####Useful commands:
 docker-compose stop
 docker-compose down
 docker-compose up --build
