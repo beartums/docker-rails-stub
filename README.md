@@ -8,7 +8,7 @@ This repository is optimized for working on a Windows OS. Adapted from docker.co
 Make sure that you have `docker` and `docker-compose` installed on your machine.
 
 ### 
-clone into directory name of your choice.  Now run
+clone into directory name of your choice. change to that directory.  Now run
 ```
 docker-compose build
 ```
@@ -36,7 +36,7 @@ docker-compose run web rake db:create
 
 start the server: `docker-compose up`
 
-browse to localhost:3001
+Browse to localhost:3000.  You should see the rails place holder.  YAY!
 
 ## Useful commands:
 <dl>
