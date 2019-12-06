@@ -8,7 +8,7 @@ This repository is optimized for working on a Windows OS. Adapted from docker.co
 Make sure that you have `docker` and `docker-compose` installed on your machine.
 
 ### 
-clone into directory name of your choice. Change to that directory and build:
+clone into directory name of your choice `git clone https://github.com/beartums/docker-rails-stub.git <directoryname>`. CD to that directory and build:
 ```
 docker-compose build
 ```
@@ -19,7 +19,7 @@ docker-compose run web rails new . --force --no-deps --database=postgresql
 ```
 This should populate your folder with all the files needed to run a rails app.  We're almost there!
 
-Edit your gemfile and replace `gem 'sass-rails', '~> 5.0'` with `gem 'sassc'`
+Edit your gemfile and replace `gem 'sass-rails', '~> 5.0'` with `gem 'sassc-rails'`
 
 run 
 ```
@@ -38,6 +38,17 @@ start the server: `docker-compose up`
 
 Browse to localhost:3000.  You should see the rails place holder.  YAY!
 
+NOTE:
+      # If you make any changes to the gemfile, you will need to run `docker-compose build` or `docker-compose up --build`
+      for your installation to save the changes
+
+      # You can add dependencies using yarn, but only in a running container.
+      Once you have the container running (`docker-compose up`) open another
+      terminal in the same folder and run `docker exec -it <folder>_web_1 /bin/bash`
+      to open a terminal in the running container.  you can run yarn from this command line
+      , as well as rails c, or any other command you need to run for debugging and
+      development
+
 ## Useful commands:
 <dl>
 <dt>docker-compose stop</dt>
@@ -53,8 +64,8 @@ Browse to localhost:3000.  You should see the rails place holder.  YAY!
 `yarn install --check-files`, `ran add ...` etc</dd>
 </dl>
 
-add react
-add webpacker and react-rails to gemfile
+### Add React
+<!-- add webpacker and react-rails to gemfile
 add this to dockerfile:  && \
       curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
       echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
@@ -68,17 +79,17 @@ $ docker-compose run web rails webpacker:install:react
 $ docker-compose run web rails generate react:install
 
 add to app/views/layouts/application.html.erb (in <head>:
-    <!-- Following will make the react components availabe to our layout -->
-    <%= javascript_pack_tag 'application' %>
+    <-- Following will make the react components availabe to our layout --
+    %= javascript_pack_tag 'application' %
 	
 create home/index.erb:
 	<%= react_component 'GreetUser', name: 'Ankur' %>
 	
 Use styles
 ???add to gemfile: gem 'bootstrap'
-yarn add bootstrap
-yarn add popper.js
-yarn add jquery
+yarn add bootstrap popper.js jquery npm
+
+npm rebuild node-sass
 
 docker-compose build
 import './src/application' -> app/javascript/packs/application.js
@@ -87,4 +98,4 @@ into app/javascript/packs/src/application.scss
 	@import '~bootstrap/dist/css/bootstrap';
 	@import './custom.scss';
 	
-docker-compose run web yarn install --check-files
+docker-compose run web yarn install --check-files -->
