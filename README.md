@@ -39,15 +39,15 @@ start the server: `docker-compose up`
 Browse to localhost:3000.  You should see the rails place holder.  YAY!
 
 NOTE:
-      # If you make any changes to the gemfile, you will need to run `docker-compose build` or `docker-compose up --build`
-      for your installation to save the changes
+1. If you make any changes to the gemfile, you will need to run `docker-compose build` or `docker-compose up --build`
+for your installation to save the changes
 
-      # You can add dependencies using yarn, but only in a running container.
-      Once you have the container running (`docker-compose up`) open another
-      terminal in the same folder and run `docker exec -it <folder>_web_1 /bin/bash`
-      to open a terminal in the running container.  you can run yarn from this command line
-      , as well as rails c, or any other command you need to run for debugging and
-      development
+2. You can add dependencies using yarn, but only in a running container.
+Once you have the container running (`docker-compose up`) open another
+terminal in the same folder and run `docker exec -it <folder>_web_1 /bin/bash`
+to open a terminal in the running container.  you can run yarn from this command line
+, as well as rails c, or any other command you need to run for debugging and
+development
 
 ## Useful commands:
 <dl>
@@ -65,6 +65,7 @@ NOTE:
 </dl>
 
 ### Add React
+more to come...
 <!-- add webpacker and react-rails to gemfile
 add this to dockerfile:  && \
       curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
