@@ -51,17 +51,19 @@ development
 
 ## Useful commands:
 <dl>
-<dt>docker-compose stop</dt>
-<dd>Stop the running containers</dd>
-<dt>docker-compose down</dt>
-<dd>Stop and remove the running containers</dd>
-<dt>docker-compose up --build</dt>
-<dd>Build the containers before starting them</dd>
-<dt>docker-compose run web bundle install</dt>
-<dd>Run the gem bundler.  (replace `bundle install` with any other one-off command)
-<dt>docker-compose exec -it rails_web_1 /bin/bash</dt>
-<dd>open a bash prompt in the container hosting the server.  From here you can run any useful commands, like `rails console`,
-`yarn install --check-files`, `ran add ...` etc</dd>
+      <dt>docker-compose stop</dt>
+      <dd>Stop the running containers</dd>
+      <dt>docker-compose down</dt>
+      <dd>Stop and remove the running containers</dd>
+      <dt>docker-compose up --build</dt>
+      <dd>Build the containers before starting them</dd>
+      <dt>docker-compose run web bundle install</dt>
+      <dd>Run the gem bundler.  (replace `bundle install` with any other one-off command)
+      <dt>*docker exec -it &lt;folderName&gt;_web_1 /bin/bash*</dt>
+      <dd>Open a bash prompt in the container hosting the server.  This is probably the most 
+      important command.  From here you can run any useful commands in the rails environment, 
+      like `rails console`, `yarn install --check-files`, `yarn add ...` etc.  You *must*
+      update your rails environment here, rather than at your windows terminal</dd>
 </dl>
 
 ### Add React
